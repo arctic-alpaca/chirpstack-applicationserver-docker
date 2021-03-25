@@ -1,0 +1,1 @@
+chirpstack-applicationserver-docker
