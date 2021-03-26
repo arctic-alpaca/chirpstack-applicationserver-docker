@@ -22,7 +22,7 @@ jobs:
                 repository: brocaar/chirpstack-application-server
                 ref: ${{ steps.chirpstack-release.outputs.release }}
 
-          - name: Modyfiy ChirpStack dockerfile for multiarch builds
+          - name: Modify ChirpStack dockerfile for multiarch builds
             run: |
                  sed -i 's/FROM g/FROM --platform=$BUILDPLATFORM g/' Dockerfile
                  sed -i 's/RUN make/COPY --from=tonistiigi\/xx:golang \/ \/\nARG TARGETPLATFORM\nRUN make/' Dockerfile
